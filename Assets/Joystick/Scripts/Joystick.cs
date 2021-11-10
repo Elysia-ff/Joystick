@@ -111,4 +111,21 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 		sqrMaxDistance = maxDistance * maxDistance;
 		unitAngleInRadian = maxAngleInRadian / unitAngleCount;
 	}
+
+#if UNITY_EDITOR
+	private void Update()
+	{
+		for (int i = 0; i < unitAngleCount; i++)
+		{
+			float snappedAngleInRadian = unitAngleInRadian * i;
+			Vector3 dir = new Vector3(Mathf.Cos(snappedAngleInRadian), Mathf.Sin(snappedAngleInRadian), 0);
+			Vector3 start = rectTransform.position + rectTransform.TransformVector(dir * minDistance);
+			Vector3 end = rectTransform.position + rectTransform.TransformVector(dir * maxDistance);
+
+			Debug.DrawLine(start, end, Color.green);
+		}
+
+		Debug.DrawLine(rectTransform.position, pointer.position, Color.red);
+	}
+#endif
 }
