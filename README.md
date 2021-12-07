@@ -23,7 +23,7 @@ In this gif, 4 directions. (0 means no snapping)
 ---
 
 ### Min/Max Value Threshold  
-If the distance is less than `minValueThreshold`, [Value](https://github.com/Elysia-ff/Joystick/blob/master/Assets/Joystick/Scripts/Joystick.cs#L27) returns 0.
+If the distance is less than `minValueThreshold`, [Value](https://github.com/Elysia-ff/Joystick/blob/master/Assets/Joystick/Scripts/Joystick.cs#L71) returns 0.
  ([usage](https://github.com/Elysia-ff/Joystick/blob/master/Assets/JoystickExample/Player.cs#L11))  
 With `maxValueThreshold`, it returns 1.  
 If `minValueThreshold == maxValueThreshold`, it's always 1.  
